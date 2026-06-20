@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Commerce Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+header{
+    background:linear-gradient(45deg,#ff6b6b,#6c63ff);
+    color:white;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.cart{
+    background:white;
+    color:#333;
+    padding:10px 15px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+nav{
+    background:#333;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:white;
+}
+
+.hero h1{
+    margin-bottom:10px;
+}
+
+.products{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+}
+
+.product img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.product-content{
+    padding:15px;
+}
+
+.price{
+    color:#6c63ff;
+    font-size:22px;
+    margin:10px 0;
+    font-weight:bold;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#6c63ff;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">MyShop</div>
+    <div class="cart">
+        Cart: <span id="cartCount">0</span>
+    </div>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Categories</a>
+    <a href="#">Contact</a>
+</nav>
+
+<section class="hero">
+    <h1>Welcome to MyShop</h1>
+    <p>Best Products at Amazing Prices</p>
+</section>
+
+<section class="products">
+
+    <div class="product">
+        <img src="https://picsum.photos/400/300?1">
+        <div class="product-content">
+            <h3>Smart Watch</h3>
+            <p>Premium quality smartwatch.</p>
+            <div class="price">₹2,999</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://picsum.photos/400/300?2">
+        <div class="product-content">
+            <h3>Wireless Headphones</h3>
+            <p>Crystal clear sound quality.</p>
+            <div class="price">₹1,999</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://picsum.photos/400/300?3">
+        <div class="product-content">
+            <h3>Running Shoes</h3>
+            <p>Comfortable and stylish.</p>
+            <div class="price">₹3,499</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://picsum.photos/400/300?4">
+        <div class="product-content">
+            <h3>Mobile Phone</h3>
+            <p>Latest smartphone model.</p>
+            <div class="price">₹19,999</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 MyShop. All Rights Reserved.</p>
+</footer>
+
+<script>
+let cartCount = 0;
+
+function addToCart() {
+    cartCount++;
+    document.getElementById("cartCount").textContent = cartCount;
+    alert("Product added to cart!");
+}
+</script>
+
+</body>
+</html>
